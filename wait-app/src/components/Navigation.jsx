@@ -9,7 +9,7 @@ function Navigation() {
         wait.
       </div></a> */}
       <div class="logo">
-        <a href="https://youtube.com" className="gradient-text">
+        <a href="/" className="gradient-text">
           wait.
         </a>
       </div>
