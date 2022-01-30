@@ -27,15 +27,15 @@ function Home() {
 
 
 
-        const { Client } = require('postgres')
-        const client = new Client({
-          connectionString: 'ec2-3-224-157-224.compute-1.amazonaws.com',
-          ssl: {
-            rejectUnauthorized: false
-          }
-        });
+        // const { Client } = require('postgres')
+        // const client = new Client({
+        //   connectionString: 'ec2-3-224-157-224.compute-1.amazonaws.com',
+        //   ssl: {
+        //     rejectUnauthorized: false
+        //   }
+        // });
 
-        client.connect();
+        // client.connect();
 
         //var psql = require('postgres')
         // var connection = psql.createConnection({
@@ -75,25 +75,75 @@ function Home() {
       console.log("NICE")
       setSearch("");
   };
+
+  const dateBuilder = (d) => {
+    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    let day = days[d.getDay()];
+    let date = d.getDate();
+    let month = months[d.getMonth()];
+    let year = d.getFullYear();
+
+    return `${day} ${date} ${month} ${year}`
+  }
     
   return(
-      <container>
-          <Navigation/>
-          <h2 style={{ textAlign: "center", margin: 20 }}>Please Enter your Plane ID</h2>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-          <form onSubmit={getSearch}>
-                <input
-                  placeholder="Plane ID"
-                  name="topic"
-                  value={search}
-                  onChange={handleSearch}
-                  />
-                  <button type="submit" color="green">
-                      Search
-                  </button>
-          </form>
+      <div className="app">
+        <main>
+          <div>
+            <Navigation/>
+            <div className="weather-box">
+              <div className="temp">Please Enter your Flight Number</div>
+            </div>
+            {/* <div style={{ display: "flex", justifyContent: "center" }}>
+              <form onSubmit={getSearch}>
+                    <input
+                      placeholder="Plane ID"
+                      name="topic"
+                      value={search}
+                      onChange={handleSearch}
+                      />
+                      <button type="submit" color="green">
+                          Search
+                      </button>
+              </form>
+            </div> */}
+            <div className="search-box">
+              <input 
+                onSubmit={getSearch}
+                name="topic"
+                value={search}
+                onChange={handleSearch}
+                type="text"
+                className="search-bar"
+                placeholder="Search..."
+                // onChange={e => setQuery(e.target.value)}
+                // value={query}
+                // onKeyPress={search}
+              />
+            </div>
           </div>
-      </container>
+
+        
+          {/* <div className="location-box">
+
+            <div className="location">New York City</div>
+
+            <div className="date">{dateBuilder(new Date())}</div>
+          </div>
+          <div className="weather-box">
+            <div className="temp">
+              45
+
+            </div>
+
+            <div className="weather">Sunny</div>
+          </div> */}
+        </main>
+
+      </div>
+
   )
 }
 
