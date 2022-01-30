@@ -62,35 +62,32 @@ function Home() {
       //     </div>
       // </container>
       <div className="app">
-      <main>
-        <div>
-          <Navigation/>
-          <div className="weather-box">
-            <div className="temp">Please Enter your Flight Number</div>
-          </div>
+        <main>
+          <div>
+            <Navigation/>
+            <div className="weather-box">
+              <div className="temp">Please Enter your Flight Number</div>
+            </div>
 
-          <div className="search-box">
-            <input 
-              // onKeyPress={getSearch}
-              name="topic"
-              value={search}
-              onChange={handleSearch}
-              type="text"
-              className="search-bar"
-              placeholder="Search..."
-            /> 
+            <div className="search-box">
+              <input 
+                // onKeyPress={getSearch}
+                name="topic"
+                value={search}
+                onChange={handleSearch}
+                type="text"
+                className="search-bar"
+                placeholder="Search..."
+              /> 
+            </div>
+            <div className="search-box">
+              <button className="center-button" onClick={getSearch}>
+                  Submit
+              </button>
+            </div>
           </div>
-          <div className="search-box">
-            <button className="center-button" onClick={getSearch}>
-                Submit
-            </button>
-          </div>
-        </div>
-
-  
-      </main>
-
-    </div>
+        </main>
+      </div>
   )
 }
 

@@ -25,9 +25,6 @@ function NavigationPost() {
     //   </nav>
     // </div>
     <div className="title-bar">
-      {/* <a href="https://youtube.com"><div class="logo">
-        wait.
-      </div></a> */}
       <div class="logo">
         <a href="/" className="gradient-text">
           wait.

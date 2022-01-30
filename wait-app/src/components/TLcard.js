@@ -8,7 +8,6 @@ const TLcard = ({Title,Image,PostContent,Tags}) => {
             <h1 className={style.title}>"{Title}"</h1>
             <img src= {Image} className={style.image}></img>
             <p className={style.content}>~ {PostContent}</p>
-            {/* <p className={style.tags}>{Tags}</p> */}
         </div>
     );
 }
