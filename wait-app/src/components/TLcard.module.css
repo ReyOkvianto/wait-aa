@@ -1,11 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
+
 .card {
   border-radius: 10px;
-  box-shadow: 0px 5px 20px rgb(71, 71, 71);
-  margin: 20px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 1);
+  margin: 75px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background: white;
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
   align-items: center;
   min-width: 40%;
+  padding: 30px;
+}
+
+.title {
+  font-family: 'Dongle', sans-serif;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.image {
+  margin-bottom: 50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 10%;
+  box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgb(71, 71, 71);
+  padding: 20px;
+
+  font-family: 'Dongle', sans-serif;
+  font-weight: 200;
+  font-size: 30px;
+
+  background-color: rgba(63, 231, 243, 0.7);
 }

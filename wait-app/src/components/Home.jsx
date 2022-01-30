@@ -44,23 +44,53 @@ function Home() {
   };
     
   return(
-      <container>
+      // <container>
+      //     <Navigation/>
+      //     <h2 style={{ textAlign: "center", margin: 20 }}>Please Enter your Plane ID</h2>
+      //     <div style={{ display: "flex", justifyContent: "center" }}>
+      //     <form onSubmit={getSearch}>
+      //           <input
+      //             placeholder="Plane ID"
+      //             name="topic"
+      //             value={search}
+      //             onChange={handleSearch}
+      //             />
+      //             <button type="submit" color="green">
+      //                 Search
+      //             </button>
+      //     </form>
+      //     </div>
+      // </container>
+      <div className="app">
+      <main>
+        <div>
           <Navigation/>
-          <h2 style={{ textAlign: "center", margin: 20 }}>Please Enter your Plane ID</h2>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-          <form onSubmit={getSearch}>
-                <input
-                  placeholder="Plane ID"
-                  name="topic"
-                  value={search}
-                  onChange={handleSearch}
-                  />
-                  <button type="submit" color="green">
-                      Search
-                  </button>
-          </form>
+          <div className="weather-box">
+            <div className="temp">Please Enter your Flight Number</div>
           </div>
-      </container>
+
+          <div className="search-box">
+            <input 
+              // onKeyPress={getSearch}
+              name="topic"
+              value={search}
+              onChange={handleSearch}
+              type="text"
+              className="search-bar"
+              placeholder="Search..."
+            /> 
+          </div>
+          <div className="search-box">
+            <button className="center-button" onClick={getSearch}>
+                Submit
+            </button>
+          </div>
+        </div>
+
+  
+      </main>
+
+    </div>
   )
 }
 

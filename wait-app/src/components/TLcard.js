@@ -2,14 +2,13 @@ import React from 'react';
 import style from './TLcard.module.css';
 
 
-const TLcard = ({Destination,Title,Image,PostContent,Tags}) => {
+const TLcard = ({Title,Image,PostContent,Tags}) => {
     return(
         <div className={style.card}>
-            <h1>{Destination}</h1>
-            <p>{Title}</p>
-            <img src= {Image} alt="" width = "200" height = "200"></img>
-            <p>{PostContent}</p>
-            <p>{Tags}</p>
+            <h1 className={style.title}>"{Title}"</h1>
+            <img src= {Image} className={style.image}></img>
+            <p className={style.content}>~ {PostContent}</p>
+            {/* <p className={style.tags}>{Tags}</p> */}
         </div>
     );
 }

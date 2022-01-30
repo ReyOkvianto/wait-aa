@@ -6,8 +6,8 @@ import TLcard from './TLcard.js';
 
 function Post() {
   
-  const {state} = useLocation();
-  const { Location} = state; // Read values passed on state
+  const { state } = useLocation();
+  const { Location } = state; // Read values passed on state
 
   const [TL, setTL] = useState([]);
   
@@ -16,7 +16,7 @@ function Post() {
   },[]); //REFRESH ON POST
 
   const getDbInfo = async () => {
-    fetch('http://localhost:3004/users/' + Location).then(function(response) {
+    fetch('https://wait-aa-api.herokuapp.com/destination/' + Location).then(function(response) {
       return response.text();
     }).then(function(data) {
       const dataDB = JSON.parse(data);
@@ -26,12 +26,11 @@ function Post() {
   }
 
   return (
-    <div className="contact">
+    <div className="app">
         <NavigationPost/>
         
         {TL.map(card => (
           <TLcard Title={card.title} 
-          Destination={card.dest} 
           Image={card.image_url}
           PostContent={card.post_content}
           Tags={card.tags}/> 
