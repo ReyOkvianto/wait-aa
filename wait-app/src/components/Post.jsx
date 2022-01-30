@@ -1,8 +1,10 @@
 import React from "react";
+import { NavigationPost } from ".";
 
 function Post() {
   return (
     <div className="contact">
+      <NavigationPost/>
       <div class="container">
         <div class="row align-items-center my-5">
           <div class="col-lg-7">
