@@ -31,9 +31,11 @@ function Post() {
     <div className="app">
         <NavigationPost/>
 
-        <button type="submit" color="green" onClick = {() => setButtonPopup(true)}>
-            Submit A Post!
-        </button>
+        <div className="search-box">
+          <button className="center-blue" type="submit" onClick = {() => setButtonPopup(true)}>
+              Submit A Post!
+          </button>
+        </div>
 
         <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
         </Popup>
