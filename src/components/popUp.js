@@ -91,7 +91,7 @@ function Popup(props){
                 <input className="search-bar" placeholder="Tags..." type="text" name="tags"                   onChange={handletag}
 />
                 </div>
-                    <button className="center-button">Submit</button>
+                    <button onClick = {()=> props.setTrigger(false)} className="center-button">Submit</button>
                     <button onClick = {()=> props.setTrigger(false)} className="center-red">Close</button>
                     {props.children}
                 
