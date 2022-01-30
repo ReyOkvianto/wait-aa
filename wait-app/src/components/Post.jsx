@@ -1,30 +1,41 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import {useLocation} from "react-router-dom"
 import { NavigationPost } from ".";
+import TLcard from './TLcard.js';
+
 
 function Post() {
+  
+  const {state} = useLocation();
+  const { Location} = state; // Read values passed on state
+
+  const [TL, setTL] = useState([]);
+  
+  useEffect(() =>{
+    getDbInfo();
+  },[]); //REFRESH ON POST
+
+  const getDbInfo = async () => {
+    fetch('http://localhost:3004/users/' + Location).then(function(response) {
+      return response.text();
+    }).then(function(data) {
+      const dataDB = JSON.parse(data);
+      console.log(dataDB)
+      setTL(dataDB);
+    });
+  }
+
   return (
     <div className="contact">
-      <NavigationPost/>
-      <div class="container">
-        <div class="row align-items-center my-5">
-          <div class="col-lg-7">
-            <img
-              class="img-fluid rounded mb-4 mb-lg-0"
-              src="http://placehold.it/900x400"
-              alt=""
-            />
-          </div>
-          <div class="col-lg-5">
-            <h1 class="font-weight-light">Contact</h1>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
-          </div>
-        </div>
-      </div>
+        <NavigationPost/>
+        
+        {TL.map(card => (
+          <TLcard Title={card.title} 
+          Destination={card.dest} 
+          Image={card.image_url}
+          PostContent={card.post_content}
+          Tags={card.tags}/> 
+        ))}
     </div>
   );
 }

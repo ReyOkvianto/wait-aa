@@ -24,44 +24,11 @@ function Home() {
         alert("ERROR: Flight info not valid!")
       }else{
         setFalseFlight(false);
-
-
-
-        const { Client } = require('postgres')
-        const client = new Client({
-          connectionString: 'ec2-3-224-157-224.compute-1.amazonaws.com',
-          ssl: {
-            rejectUnauthorized: false
-          }
-        });
-
-        client.connect();
-
-        //var psql = require('postgres')
-        // var connection = psql.createConnection({
-        // host     : 'ec2-3-224-157-224.compute-1.amazonaws.com',
-        // user     : 'aqyutaslgzofpz',
-        // password : '1771ae5c038865278d28925bbd8fba53aa1215dd39a877116bce56bf509624a2',
-        // database : 'dc4a6puqtcu1ku'
-        // });
-
-        // connection.connect()
-
-
-        // connection.query(
-        //   'SELECT * FROM user_messages WHERE dest = DFW' , function (err, rows, fields) 
-        //   {
-        //     if (err) throw err
-            
-        //     console.log('The solution is: ', rows[0].solution)
-        //   }
-        // )
-        
-        // connection.end()
-
+        navigate("/Post",{state: { Location: data[0].destination.code}})
       }
     }
   };
+
 
   const handleSearch = event => {
       //console.log(event.target.value);
